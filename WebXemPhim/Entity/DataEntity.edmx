@@ -1,0 +1,756 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbDoAnWebModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="dbDoAnWebModelStoreContainer">
+          <EntitySet Name="Banner" EntityType="dbDoAnWebModel.Store.Banner" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CTTapPhim" EntityType="dbDoAnWebModel.Store.CTTapPhim" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DSPhimBo" EntityType="dbDoAnWebModel.Store.DSPhimBo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DSPhimLe" EntityType="dbDoAnWebModel.Store.DSPhimLe" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HopPhim" EntityType="dbDoAnWebModel.Store.HopPhim" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LichSu" EntityType="dbDoAnWebModel.Store.LichSu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Nam" EntityType="dbDoAnWebModel.Store.Nam" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="QuocGia" EntityType="dbDoAnWebModel.Store.QuocGia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="dbDoAnWebModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TaiKhoan" EntityType="dbDoAnWebModel.Store.TaiKhoan" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TheLoai" EntityType="dbDoAnWebModel.Store.TheLoai" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tintucphim" EntityType="dbDoAnWebModel.Store.tintucphim" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__LichSu__IDPhim__208CD6FA" Association="dbDoAnWebModel.Store.FK__LichSu__IDPhim__208CD6FA">
+            <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+            <End Role="LichSu" EntitySet="LichSu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LichSu__TenDN__1F98B2C1" Association="dbDoAnWebModel.Store.FK__LichSu__TenDN__1F98B2C1">
+            <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+            <End Role="LichSu" EntitySet="LichSu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Banner_DSPhimBo" Association="dbDoAnWebModel.Store.FK_Banner_DSPhimBo">
+            <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+            <End Role="Banner" EntitySet="Banner" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTTapPhim_DSPhimBo" Association="dbDoAnWebModel.Store.FK_CTTapPhim_DSPhimBo">
+            <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+            <End Role="CTTapPhim" EntitySet="CTTapPhim" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DSPhimBo_Nam" Association="dbDoAnWebModel.Store.FK_DSPhimBo_Nam">
+            <End Role="Nam" EntitySet="Nam" />
+            <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DSPhimBo_QuocGia" Association="dbDoAnWebModel.Store.FK_DSPhimBo_QuocGia">
+            <End Role="QuocGia" EntitySet="QuocGia" />
+            <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DSPhimBo_TheLoai" Association="dbDoAnWebModel.Store.FK_DSPhimBo_TheLoai">
+            <End Role="TheLoai" EntitySet="TheLoai" />
+            <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DSPhimLe_Nam" Association="dbDoAnWebModel.Store.FK_DSPhimLe_Nam">
+            <End Role="Nam" EntitySet="Nam" />
+            <End Role="DSPhimLe" EntitySet="DSPhimLe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DSPhimLe_QuocGia" Association="dbDoAnWebModel.Store.FK_DSPhimLe_QuocGia">
+            <End Role="QuocGia" EntitySet="QuocGia" />
+            <End Role="DSPhimLe" EntitySet="DSPhimLe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DSPhimLe_TheLoai" Association="dbDoAnWebModel.Store.FK_DSPhimLe_TheLoai">
+            <End Role="TheLoai" EntitySet="TheLoai" />
+            <End Role="DSPhimLe" EntitySet="DSPhimLe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HopPhim_DSPhimBo" Association="dbDoAnWebModel.Store.FK_HopPhim_DSPhimBo">
+            <End Role="DSPhimBo" EntitySet="DSPhimBo" />
+            <End Role="HopPhim" EntitySet="HopPhim" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HopPhim_TaiKhoan" Association="dbDoAnWebModel.Store.FK_HopPhim_TaiKhoan">
+            <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+            <End Role="HopPhim" EntitySet="HopPhim" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Banner">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Img" Type="nvarchar(max)" />
+          <Property Name="IDPhim" Type="int" />
+        </EntityType>
+        <EntityType Name="CTTapPhim">
+          <Key>
+            <PropertyRef Name="IDPhim" />
+          </Key>
+          <Property Name="IDPhim" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TapPhim" Type="int" />
+          <Property Name="ID" Type="int" />
+          <Property Name="Link" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="DSPhimBo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TenPhim" Type="nvarchar(max)" />
+          <Property Name="NoiDung" Type="nvarchar(max)" />
+          <Property Name="NamPhatHanh" Type="int" />
+          <Property Name="IDTheLoai" Type="int" />
+          <Property Name="ThoiLuong" Type="nvarchar" MaxLength="15" />
+          <Property Name="Img" Type="nvarchar(max)" />
+          <Property Name="MaQG" Type="int" />
+          <Property Name="LuotXem" Type="int" />
+        </EntityType>
+        <EntityType Name="DSPhimLe">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TenPhim" Type="nvarchar(max)" />
+          <Property Name="NoiDung" Type="nvarchar(max)" />
+          <Property Name="NamPhatHanh" Type="int" />
+          <Property Name="IDTheLoai" Type="int" />
+          <Property Name="ThoiLuong" Type="nvarchar" MaxLength="15" />
+          <Property Name="Img" Type="nvarchar(max)" />
+          <Property Name="MaQG" Type="int" />
+          <Property Name="LuotXem" Type="int" />
+          <Property Name="Link" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="HopPhim">
+          <Key>
+            <PropertyRef Name="TenDN" />
+            <PropertyRef Name="IDPhim" />
+          </Key>
+          <Property Name="TenDN" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IDPhim" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LichSu">
+          <Key>
+            <PropertyRef Name="TenDN" />
+            <PropertyRef Name="IDPhim" />
+          </Key>
+          <Property Name="TenDN" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IDPhim" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Nam">
+          <Key>
+            <PropertyRef Name="MaNam" />
+          </Key>
+          <Property Name="MaNam" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TenNam" Type="int" />
+        </EntityType>
+        <EntityType Name="QuocGia">
+          <Key>
+            <PropertyRef Name="MaQG" />
+          </Key>
+          <Property Name="MaQG" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TenQG" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TaiKhoan">
+          <Key>
+            <PropertyRef Name="TenDN" />
+          </Key>
+          <Property Name="TenDN" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MatKhau" Type="varchar" MaxLength="50" />
+          <Property Name="Quyen" Type="bit" />
+        </EntityType>
+        <EntityType Name="TheLoai">
+          <Key>
+            <PropertyRef Name="IDTheLoai" />
+          </Key>
+          <Property Name="IDTheLoai" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TenTheLoai" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tintucphim">
+          <Key>
+            <PropertyRef Name="idtintuc" />
+          </Key>
+          <Property Name="idtintuc" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tieude" Type="nvarchar(max)" />
+          <Property Name="tomtat" Type="nvarchar(max)" />
+          <Property Name="noidung" Type="nvarchar(max)" />
+          <Property Name="hinhanh" Type="nvarchar(max)" />
+          <Property Name="ngaycapnhat" Type="date" />
+          <Property Name="luotxem" Type="int" />
+        </EntityType>
+        <Association Name="FK__LichSu__IDPhim__208CD6FA">
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.Store.DSPhimBo" Multiplicity="1" />
+          <End Role="LichSu" Type="dbDoAnWebModel.Store.LichSu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DSPhimBo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LichSu">
+              <PropertyRef Name="IDPhim" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LichSu__TenDN__1F98B2C1">
+          <End Role="TaiKhoan" Type="dbDoAnWebModel.Store.TaiKhoan" Multiplicity="1" />
+          <End Role="LichSu" Type="dbDoAnWebModel.Store.LichSu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="TenDN" />
+            </Principal>
+            <Dependent Role="LichSu">
+              <PropertyRef Name="TenDN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Banner_DSPhimBo">
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.Store.DSPhimBo" Multiplicity="0..1" />
+          <End Role="Banner" Type="dbDoAnWebModel.Store.Banner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DSPhimBo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Banner">
+              <PropertyRef Name="IDPhim" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTTapPhim_DSPhimBo">
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.Store.DSPhimBo" Multiplicity="0..1" />
+          <End Role="CTTapPhim" Type="dbDoAnWebModel.Store.CTTapPhim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DSPhimBo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CTTapPhim">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DSPhimBo_Nam">
+          <End Role="Nam" Type="dbDoAnWebModel.Store.Nam" Multiplicity="0..1" />
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.Store.DSPhimBo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nam">
+              <PropertyRef Name="MaNam" />
+            </Principal>
+            <Dependent Role="DSPhimBo">
+              <PropertyRef Name="NamPhatHanh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DSPhimBo_QuocGia">
+          <End Role="QuocGia" Type="dbDoAnWebModel.Store.QuocGia" Multiplicity="0..1" />
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.Store.DSPhimBo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuocGia">
+              <PropertyRef Name="MaQG" />
+            </Principal>
+            <Dependent Role="DSPhimBo">
+              <PropertyRef Name="MaQG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DSPhimBo_TheLoai">
+          <End Role="TheLoai" Type="dbDoAnWebModel.Store.TheLoai" Multiplicity="0..1" />
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.Store.DSPhimBo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TheLoai">
+              <PropertyRef Name="IDTheLoai" />
+            </Principal>
+            <Dependent Role="DSPhimBo">
+              <PropertyRef Name="IDTheLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DSPhimLe_Nam">
+          <End Role="Nam" Type="dbDoAnWebModel.Store.Nam" Multiplicity="0..1" />
+          <End Role="DSPhimLe" Type="dbDoAnWebModel.Store.DSPhimLe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nam">
+              <PropertyRef Name="MaNam" />
+            </Principal>
+            <Dependent Role="DSPhimLe">
+              <PropertyRef Name="NamPhatHanh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DSPhimLe_QuocGia">
+          <End Role="QuocGia" Type="dbDoAnWebModel.Store.QuocGia" Multiplicity="0..1" />
+          <End Role="DSPhimLe" Type="dbDoAnWebModel.Store.DSPhimLe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuocGia">
+              <PropertyRef Name="MaQG" />
+            </Principal>
+            <Dependent Role="DSPhimLe">
+              <PropertyRef Name="MaQG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DSPhimLe_TheLoai">
+          <End Role="TheLoai" Type="dbDoAnWebModel.Store.TheLoai" Multiplicity="0..1" />
+          <End Role="DSPhimLe" Type="dbDoAnWebModel.Store.DSPhimLe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TheLoai">
+              <PropertyRef Name="IDTheLoai" />
+            </Principal>
+            <Dependent Role="DSPhimLe">
+              <PropertyRef Name="IDTheLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HopPhim_DSPhimBo">
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.Store.DSPhimBo" Multiplicity="1" />
+          <End Role="HopPhim" Type="dbDoAnWebModel.Store.HopPhim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DSPhimBo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HopPhim">
+              <PropertyRef Name="IDPhim" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HopPhim_TaiKhoan">
+          <End Role="TaiKhoan" Type="dbDoAnWebModel.Store.TaiKhoan" Multiplicity="1" />
+          <End Role="HopPhim" Type="dbDoAnWebModel.Store.HopPhim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="TenDN" />
+            </Principal>
+            <Dependent Role="HopPhim">
+              <PropertyRef Name="TenDN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbDoAnWebModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="dbDoAnWebEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Banners" EntityType="dbDoAnWebModel.Banner" />
+          <EntitySet Name="CTTapPhims" EntityType="dbDoAnWebModel.CTTapPhim" />
+          <EntitySet Name="DSPhimBoes" EntityType="dbDoAnWebModel.DSPhimBo" />
+          <EntitySet Name="DSPhimLes" EntityType="dbDoAnWebModel.DSPhimLe" />
+          <EntitySet Name="Nams" EntityType="dbDoAnWebModel.Nam" />
+          <EntitySet Name="QuocGias" EntityType="dbDoAnWebModel.QuocGia" />
+          <EntitySet Name="sysdiagrams" EntityType="dbDoAnWebModel.sysdiagram" />
+          <EntitySet Name="TaiKhoans" EntityType="dbDoAnWebModel.TaiKhoan" />
+          <EntitySet Name="TheLoais" EntityType="dbDoAnWebModel.TheLoai" />
+          <EntitySet Name="tintucphims" EntityType="dbDoAnWebModel.tintucphim" />
+          <AssociationSet Name="FK_Banner_DSPhimBo" Association="dbDoAnWebModel.FK_Banner_DSPhimBo">
+            <End Role="DSPhimBo" EntitySet="DSPhimBoes" />
+            <End Role="Banner" EntitySet="Banners" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTTapPhim_DSPhimBo" Association="dbDoAnWebModel.FK_CTTapPhim_DSPhimBo">
+            <End Role="DSPhimBo" EntitySet="DSPhimBoes" />
+            <End Role="CTTapPhim" EntitySet="CTTapPhims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DSPhimBo_Nam" Association="dbDoAnWebModel.FK_DSPhimBo_Nam">
+            <End Role="Nam" EntitySet="Nams" />
+            <End Role="DSPhimBo" EntitySet="DSPhimBoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DSPhimBo_QuocGia" Association="dbDoAnWebModel.FK_DSPhimBo_QuocGia">
+            <End Role="QuocGia" EntitySet="QuocGias" />
+            <End Role="DSPhimBo" EntitySet="DSPhimBoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DSPhimBo_TheLoai" Association="dbDoAnWebModel.FK_DSPhimBo_TheLoai">
+            <End Role="TheLoai" EntitySet="TheLoais" />
+            <End Role="DSPhimBo" EntitySet="DSPhimBoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DSPhimLe_Nam" Association="dbDoAnWebModel.FK_DSPhimLe_Nam">
+            <End Role="Nam" EntitySet="Nams" />
+            <End Role="DSPhimLe" EntitySet="DSPhimLes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DSPhimLe_QuocGia" Association="dbDoAnWebModel.FK_DSPhimLe_QuocGia">
+            <End Role="QuocGia" EntitySet="QuocGias" />
+            <End Role="DSPhimLe" EntitySet="DSPhimLes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DSPhimLe_TheLoai" Association="dbDoAnWebModel.FK_DSPhimLe_TheLoai">
+            <End Role="TheLoai" EntitySet="TheLoais" />
+            <End Role="DSPhimLe" EntitySet="DSPhimLes" />
+          </AssociationSet>
+          <AssociationSet Name="HopPhim" Association="dbDoAnWebModel.HopPhim">
+            <End Role="DSPhimBo" EntitySet="DSPhimBoes" />
+            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+          </AssociationSet>
+          <AssociationSet Name="LichSu" Association="dbDoAnWebModel.LichSu">
+            <End Role="DSPhimBo" EntitySet="DSPhimBoes" />
+            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Banner">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Img" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IDPhim" Type="Int32" />
+          <NavigationProperty Name="DSPhimBo" Relationship="dbDoAnWebModel.FK_Banner_DSPhimBo" FromRole="Banner" ToRole="DSPhimBo" />
+        </EntityType>
+        <EntityType Name="CTTapPhim">
+          <Key>
+            <PropertyRef Name="IDPhim" />
+          </Key>
+          <Property Name="IDPhim" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TapPhim" Type="Int32" />
+          <Property Name="ID" Type="Int32" />
+          <Property Name="Link" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="DSPhimBo" Relationship="dbDoAnWebModel.FK_CTTapPhim_DSPhimBo" FromRole="CTTapPhim" ToRole="DSPhimBo" />
+        </EntityType>
+        <EntityType Name="DSPhimBo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenPhim" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="NoiDung" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="NamPhatHanh" Type="Int32" />
+          <Property Name="IDTheLoai" Type="Int32" />
+          <Property Name="ThoiLuong" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="Img" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="MaQG" Type="Int32" />
+          <Property Name="LuotXem" Type="Int32" />
+          <NavigationProperty Name="Banners" Relationship="dbDoAnWebModel.FK_Banner_DSPhimBo" FromRole="DSPhimBo" ToRole="Banner" />
+          <NavigationProperty Name="CTTapPhims" Relationship="dbDoAnWebModel.FK_CTTapPhim_DSPhimBo" FromRole="DSPhimBo" ToRole="CTTapPhim" />
+          <NavigationProperty Name="Nam" Relationship="dbDoAnWebModel.FK_DSPhimBo_Nam" FromRole="DSPhimBo" ToRole="Nam" />
+          <NavigationProperty Name="QuocGia" Relationship="dbDoAnWebModel.FK_DSPhimBo_QuocGia" FromRole="DSPhimBo" ToRole="QuocGia" />
+          <NavigationProperty Name="TheLoai" Relationship="dbDoAnWebModel.FK_DSPhimBo_TheLoai" FromRole="DSPhimBo" ToRole="TheLoai" />
+          <NavigationProperty Name="TaiKhoans" Relationship="dbDoAnWebModel.HopPhim" FromRole="DSPhimBo" ToRole="TaiKhoan" />
+          <NavigationProperty Name="TaiKhoans1" Relationship="dbDoAnWebModel.LichSu" FromRole="DSPhimBo" ToRole="TaiKhoan" />
+        </EntityType>
+        <EntityType Name="DSPhimLe">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenPhim" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="NoiDung" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="NamPhatHanh" Type="Int32" />
+          <Property Name="IDTheLoai" Type="Int32" />
+          <Property Name="ThoiLuong" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="Img" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="MaQG" Type="Int32" />
+          <Property Name="LuotXem" Type="Int32" />
+          <Property Name="Link" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Nam" Relationship="dbDoAnWebModel.FK_DSPhimLe_Nam" FromRole="DSPhimLe" ToRole="Nam" />
+          <NavigationProperty Name="QuocGia" Relationship="dbDoAnWebModel.FK_DSPhimLe_QuocGia" FromRole="DSPhimLe" ToRole="QuocGia" />
+          <NavigationProperty Name="TheLoai" Relationship="dbDoAnWebModel.FK_DSPhimLe_TheLoai" FromRole="DSPhimLe" ToRole="TheLoai" />
+        </EntityType>
+        <EntityType Name="Nam">
+          <Key>
+            <PropertyRef Name="MaNam" />
+          </Key>
+          <Property Name="MaNam" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenNam" Type="Int32" />
+          <NavigationProperty Name="DSPhimBoes" Relationship="dbDoAnWebModel.FK_DSPhimBo_Nam" FromRole="Nam" ToRole="DSPhimBo" />
+          <NavigationProperty Name="DSPhimLes" Relationship="dbDoAnWebModel.FK_DSPhimLe_Nam" FromRole="Nam" ToRole="DSPhimLe" />
+        </EntityType>
+        <EntityType Name="QuocGia">
+          <Key>
+            <PropertyRef Name="MaQG" />
+          </Key>
+          <Property Name="MaQG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenQG" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="DSPhimBoes" Relationship="dbDoAnWebModel.FK_DSPhimBo_QuocGia" FromRole="QuocGia" ToRole="DSPhimBo" />
+          <NavigationProperty Name="DSPhimLes" Relationship="dbDoAnWebModel.FK_DSPhimLe_QuocGia" FromRole="QuocGia" ToRole="DSPhimLe" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TaiKhoan">
+          <Key>
+            <PropertyRef Name="TenDN" />
+          </Key>
+          <Property Name="TenDN" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MatKhau" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Quyen" Type="Boolean" />
+          <NavigationProperty Name="DSPhimBoes" Relationship="dbDoAnWebModel.HopPhim" FromRole="TaiKhoan" ToRole="DSPhimBo" />
+          <NavigationProperty Name="DSPhimBoes1" Relationship="dbDoAnWebModel.LichSu" FromRole="TaiKhoan" ToRole="DSPhimBo" />
+        </EntityType>
+        <EntityType Name="TheLoai">
+          <Key>
+            <PropertyRef Name="IDTheLoai" />
+          </Key>
+          <Property Name="IDTheLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenTheLoai" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="DSPhimBoes" Relationship="dbDoAnWebModel.FK_DSPhimBo_TheLoai" FromRole="TheLoai" ToRole="DSPhimBo" />
+          <NavigationProperty Name="DSPhimLes" Relationship="dbDoAnWebModel.FK_DSPhimLe_TheLoai" FromRole="TheLoai" ToRole="DSPhimLe" />
+        </EntityType>
+        <EntityType Name="tintucphim">
+          <Key>
+            <PropertyRef Name="idtintuc" />
+          </Key>
+          <Property Name="idtintuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tieude" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="tomtat" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="noidung" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="hinhanh" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ngaycapnhat" Type="DateTime" Precision="0" />
+          <Property Name="luotxem" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_Banner_DSPhimBo">
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.DSPhimBo" Multiplicity="0..1" />
+          <End Role="Banner" Type="dbDoAnWebModel.Banner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DSPhimBo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Banner">
+              <PropertyRef Name="IDPhim" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTTapPhim_DSPhimBo">
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.DSPhimBo" Multiplicity="0..1" />
+          <End Role="CTTapPhim" Type="dbDoAnWebModel.CTTapPhim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DSPhimBo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CTTapPhim">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DSPhimBo_Nam">
+          <End Role="Nam" Type="dbDoAnWebModel.Nam" Multiplicity="0..1" />
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.DSPhimBo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nam">
+              <PropertyRef Name="MaNam" />
+            </Principal>
+            <Dependent Role="DSPhimBo">
+              <PropertyRef Name="NamPhatHanh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DSPhimBo_QuocGia">
+          <End Role="QuocGia" Type="dbDoAnWebModel.QuocGia" Multiplicity="0..1" />
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.DSPhimBo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuocGia">
+              <PropertyRef Name="MaQG" />
+            </Principal>
+            <Dependent Role="DSPhimBo">
+              <PropertyRef Name="MaQG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DSPhimBo_TheLoai">
+          <End Role="TheLoai" Type="dbDoAnWebModel.TheLoai" Multiplicity="0..1" />
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.DSPhimBo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TheLoai">
+              <PropertyRef Name="IDTheLoai" />
+            </Principal>
+            <Dependent Role="DSPhimBo">
+              <PropertyRef Name="IDTheLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DSPhimLe_Nam">
+          <End Role="Nam" Type="dbDoAnWebModel.Nam" Multiplicity="0..1" />
+          <End Role="DSPhimLe" Type="dbDoAnWebModel.DSPhimLe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nam">
+              <PropertyRef Name="MaNam" />
+            </Principal>
+            <Dependent Role="DSPhimLe">
+              <PropertyRef Name="NamPhatHanh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DSPhimLe_QuocGia">
+          <End Role="QuocGia" Type="dbDoAnWebModel.QuocGia" Multiplicity="0..1" />
+          <End Role="DSPhimLe" Type="dbDoAnWebModel.DSPhimLe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuocGia">
+              <PropertyRef Name="MaQG" />
+            </Principal>
+            <Dependent Role="DSPhimLe">
+              <PropertyRef Name="MaQG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DSPhimLe_TheLoai">
+          <End Role="TheLoai" Type="dbDoAnWebModel.TheLoai" Multiplicity="0..1" />
+          <End Role="DSPhimLe" Type="dbDoAnWebModel.DSPhimLe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TheLoai">
+              <PropertyRef Name="IDTheLoai" />
+            </Principal>
+            <Dependent Role="DSPhimLe">
+              <PropertyRef Name="IDTheLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HopPhim">
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.DSPhimBo" Multiplicity="*" />
+          <End Role="TaiKhoan" Type="dbDoAnWebModel.TaiKhoan" Multiplicity="*" />
+        </Association>
+        <Association Name="LichSu">
+          <End Role="DSPhimBo" Type="dbDoAnWebModel.DSPhimBo" Multiplicity="*" />
+          <End Role="TaiKhoan" Type="dbDoAnWebModel.TaiKhoan" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbDoAnWebModelStoreContainer" CdmEntityContainer="dbDoAnWebEntities">
+          <EntitySetMapping Name="Banners">
+            <EntityTypeMapping TypeName="dbDoAnWebModel.Banner">
+              <MappingFragment StoreEntitySet="Banner">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+                <ScalarProperty Name="IDPhim" ColumnName="IDPhim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTTapPhims">
+            <EntityTypeMapping TypeName="dbDoAnWebModel.CTTapPhim">
+              <MappingFragment StoreEntitySet="CTTapPhim">
+                <ScalarProperty Name="IDPhim" ColumnName="IDPhim" />
+                <ScalarProperty Name="TapPhim" ColumnName="TapPhim" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DSPhimBoes">
+            <EntityTypeMapping TypeName="dbDoAnWebModel.DSPhimBo">
+              <MappingFragment StoreEntitySet="DSPhimBo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TenPhim" ColumnName="TenPhim" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="NamPhatHanh" ColumnName="NamPhatHanh" />
+                <ScalarProperty Name="IDTheLoai" ColumnName="IDTheLoai" />
+                <ScalarProperty Name="ThoiLuong" ColumnName="ThoiLuong" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+                <ScalarProperty Name="MaQG" ColumnName="MaQG" />
+                <ScalarProperty Name="LuotXem" ColumnName="LuotXem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DSPhimLes">
+            <EntityTypeMapping TypeName="dbDoAnWebModel.DSPhimLe">
+              <MappingFragment StoreEntitySet="DSPhimLe">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TenPhim" ColumnName="TenPhim" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="NamPhatHanh" ColumnName="NamPhatHanh" />
+                <ScalarProperty Name="IDTheLoai" ColumnName="IDTheLoai" />
+                <ScalarProperty Name="ThoiLuong" ColumnName="ThoiLuong" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+                <ScalarProperty Name="MaQG" ColumnName="MaQG" />
+                <ScalarProperty Name="LuotXem" ColumnName="LuotXem" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nams">
+            <EntityTypeMapping TypeName="dbDoAnWebModel.Nam">
+              <MappingFragment StoreEntitySet="Nam">
+                <ScalarProperty Name="MaNam" ColumnName="MaNam" />
+                <ScalarProperty Name="TenNam" ColumnName="TenNam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuocGias">
+            <EntityTypeMapping TypeName="dbDoAnWebModel.QuocGia">
+              <MappingFragment StoreEntitySet="QuocGia">
+                <ScalarProperty Name="MaQG" ColumnName="MaQG" />
+                <ScalarProperty Name="TenQG" ColumnName="TenQG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="dbDoAnWebModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaiKhoans">
+            <EntityTypeMapping TypeName="dbDoAnWebModel.TaiKhoan">
+              <MappingFragment StoreEntitySet="TaiKhoan">
+                <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="Quyen" ColumnName="Quyen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TheLoais">
+            <EntityTypeMapping TypeName="dbDoAnWebModel.TheLoai">
+              <MappingFragment StoreEntitySet="TheLoai">
+                <ScalarProperty Name="IDTheLoai" ColumnName="IDTheLoai" />
+                <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tintucphims">
+            <EntityTypeMapping TypeName="dbDoAnWebModel.tintucphim">
+              <MappingFragment StoreEntitySet="tintucphim">
+                <ScalarProperty Name="idtintuc" ColumnName="idtintuc" />
+                <ScalarProperty Name="tieude" ColumnName="tieude" />
+                <ScalarProperty Name="tomtat" ColumnName="tomtat" />
+                <ScalarProperty Name="noidung" ColumnName="noidung" />
+                <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+                <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+                <ScalarProperty Name="luotxem" ColumnName="luotxem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="HopPhim" TypeName="dbDoAnWebModel.HopPhim" StoreEntitySet="HopPhim">
+            <EndProperty Name="DSPhimBo">
+              <ScalarProperty Name="ID" ColumnName="IDPhim" />
+            </EndProperty>
+            <EndProperty Name="TaiKhoan">
+              <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="LichSu" TypeName="dbDoAnWebModel.LichSu" StoreEntitySet="LichSu">
+            <EndProperty Name="DSPhimBo">
+              <ScalarProperty Name="ID" ColumnName="IDPhim" />
+            </EndProperty>
+            <EndProperty Name="TaiKhoan">
+              <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
